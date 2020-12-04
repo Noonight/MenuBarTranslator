@@ -9,31 +9,69 @@ import Cocoa
 import SwiftUI
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
-    var window: NSWindow!
-
-
+    var popover: NSPopover!
+    var statusBarItem: NSStatusItem!
+    var statusBarMenu: NSMenu!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
-        // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
-
-        // Create the window and set the content view.
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+        let contentView = MainView().environment(\.managedObjectContext, persistentContainer.viewContext)
+//        let contentView = WrapperView()
+        
+        let popover = NSPopover()
+        popover.contentSize = NSSize(width: 300, height: 250)
+        
+        popover.behavior = .transient
+        popover.appearance = NSAppearance(named: NSAppearance.Name.darkAqua) // tested
+        popover.contentViewController = NSHostingController(rootView: contentView)
+        self.popover = popover
+        self.popover.contentViewController?.view.window?.becomeKey()
+        
+        let menu = NSMenu(title: "Status Bar Menu")
+        menu.delegate = self
+        menu.addItem(NSMenuItem(
+                        title: "Quit",
+                        action: #selector(closeApp(_:)),
+                        keyEquivalent: ""))
+        self.statusBarMenu = menu
+        
+        // Create status bar item
+        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        
+        if let button = self.statusBarItem.button {
+            button.image = NSImage(named: "translateColorfull")
+            button.action = #selector(togglePopover(_:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        }
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    // MARK: - Actions
+    
+    @objc func togglePopover(_ sender: AnyObject?) {
+        if let button = self.statusBarItem.button {
+            let event = NSApp.currentEvent!
+            if event.type == NSEvent.EventType.leftMouseUp {
+                if self.popover.isShown {
+                    self.popover.performClose(sender)
+                } else {
+                    self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+                }
+            } else if event.type == NSEvent.EventType.rightMouseUp {
+                statusBarItem.menu = statusBarMenu
+                statusBarItem.button?.performClick(nil)
+            }
+        }
     }
-
+    
+    @objc func closeApp(_ sender: NSMenu) {
+        NSApplication.shared.terminate(self)
+    }
+    
+    @objc func menuDidClose(_ menu: NSMenu) {
+        statusBarItem.menu = nil
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
@@ -43,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentCloudKitContainer(name: "FirstMenuBarApp")
+        let container = NSPersistentCloudKitContainer(name: "MenuBarTranslator")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 // Replace this implementation with code to handle the error appropriately.

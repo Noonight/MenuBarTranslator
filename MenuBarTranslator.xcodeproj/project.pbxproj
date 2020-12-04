@@ -7,24 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */; };
+		D94224332572829F00DC9383 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94224322572829F00DC9383 /* DictionaryView.swift */; };
+		D9422438257283F000DC9383 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422437257283F000DC9383 /* TranslationView.swift */; };
+		D942243D2572862000DC9383 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942243C2572862000DC9383 /* LanguageModel.swift */; };
+		D94224412572866300DC9383 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94224402572866300DC9383 /* MainView.swift */; };
+		D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422445257286D300DC9383 /* SavedTranslatesModel.swift */; };
+		D9685552257A6B400011D392 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9685551257A6B400011D392 /* TranslateModel.swift */; };
+		D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBF649257A45210041AC34 /* TranslationViewModel.swift */; };
 		D9C218C2256FA8A700B7E151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C1256FA8A700B7E151 /* AppDelegate.swift */; };
-		D9C218C4256FA8A700B7E151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C3256FA8A700B7E151 /* ContentView.swift */; };
-		D9C218C7256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C5256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodeld */; };
+		D9C218C7256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */; };
 		D9C218C9256FA8AB00B7E151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218C8256FA8AB00B7E151 /* Assets.xcassets */; };
 		D9C218CC256FA8AB00B7E151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CB256FA8AB00B7E151 /* Preview Assets.xcassets */; };
 		D9C218CF256FA8AB00B7E151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CD256FA8AB00B7E151 /* Main.storyboard */; };
+		D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */; };
+		D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */; };
+		D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D9C218BE256FA8A600B7E151 /* FirstMenuBarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstMenuBarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRuToggleButtonsView.swift; sourceTree = "<group>"; };
+		D94224322572829F00DC9383 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		D9422437257283F000DC9383 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
+		D942243C2572862000DC9383 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		D94224402572866300DC9383 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D9422445257286D300DC9383 /* SavedTranslatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTranslatesModel.swift; sourceTree = "<group>"; };
+		D9685551257A6B400011D392 /* TranslateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateModel.swift; sourceTree = "<group>"; };
+		D9BBF649257A45210041AC34 /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
+		D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C218C1256FA8A700B7E151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9C218C3256FA8A700B7E151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D9C218C6256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstMenuBarApp.xcdatamodel; sourceTree = "<group>"; };
+		D9C218C6256FA8A700B7E151 /* MenuBarTranslator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuBarTranslator.xcdatamodel; sourceTree = "<group>"; };
 		D9C218C8256FA8AB00B7E151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9C218CB256FA8AB00B7E151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9C218CE256FA8AB00B7E151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9C218D0256FA8AB00B7E151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C218D1256FA8AB00B7E151 /* FirstMenuBarApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirstMenuBarApp.entitlements; sourceTree = "<group>"; };
+		D9C218D1256FA8AB00B7E151 /* MenuBarTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarTranslator.entitlements; sourceTree = "<group>"; };
+		D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateApi.swift; sourceTree = "<group>"; };
+		D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonStyle.swift; sourceTree = "<group>"; };
+		D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,10 +58,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D90CF5F1256FB0840055DB28 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D94224402572866300DC9383 /* MainView.swift */,
+				D9422436257283A000DC9383 /* Translation */,
+				D94224312572828F00DC9383 /* Dictionary */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D90CF5F2256FB0AA0055DB28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9C218C8256FA8AB00B7E151 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D94224312572828F00DC9383 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				D94224322572829F00DC9383 /* DictionaryView.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		D9422436257283A000DC9383 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				D9422437257283F000DC9383 /* TranslationView.swift */,
+				D9BBF649257A45210041AC34 /* TranslationViewModel.swift */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		D942243B2572861300DC9383 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D942243C2572862000DC9383 /* LanguageModel.swift */,
+				D9422445257286D300DC9383 /* SavedTranslatesModel.swift */,
+				D9685551257A6B400011D392 /* TranslateModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D9BBF63F257A170F0041AC34 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		D9C218B5256FA8A600B7E151 = {
 			isa = PBXGroup;
 			children = (
-				D9C218C0256FA8A700B7E151 /* FirstMenuBarApp */,
+				D9C218C0256FA8A700B7E151 /* MenuBarTranslator */,
 				D9C218BF256FA8A600B7E151 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,24 +122,27 @@
 		D9C218BF256FA8A600B7E151 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9C218BE256FA8A600B7E151 /* FirstMenuBarApp.app */,
+				D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D9C218C0256FA8A700B7E151 /* FirstMenuBarApp */ = {
+		D9C218C0256FA8A700B7E151 /* MenuBarTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				D9BBF63F257A170F0041AC34 /* API */,
+				D942243B2572861300DC9383 /* Models */,
+				D9EEC6F6256FC04F001EAFFE /* Custom */,
+				D90CF5F2256FB0AA0055DB28 /* Resources */,
+				D90CF5F1256FB0840055DB28 /* UI */,
 				D9C218C1256FA8A700B7E151 /* AppDelegate.swift */,
-				D9C218C3256FA8A700B7E151 /* ContentView.swift */,
-				D9C218C8256FA8AB00B7E151 /* Assets.xcassets */,
 				D9C218CD256FA8AB00B7E151 /* Main.storyboard */,
 				D9C218D0256FA8AB00B7E151 /* Info.plist */,
-				D9C218D1256FA8AB00B7E151 /* FirstMenuBarApp.entitlements */,
-				D9C218C5256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodeld */,
+				D9C218D1256FA8AB00B7E151 /* MenuBarTranslator.entitlements */,
+				D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */,
 				D9C218CA256FA8AB00B7E151 /* Preview Content */,
 			);
-			path = FirstMenuBarApp;
+			path = MenuBarTranslator;
 			sourceTree = "<group>";
 		};
 		D9C218CA256FA8AB00B7E151 /* Preview Content */ = {
@@ -77,12 +153,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D9EEC6F6256FC04F001EAFFE /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */,
+				D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */,
+				D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D9C218BD256FA8A600B7E151 /* FirstMenuBarApp */ = {
+		D9C218BD256FA8A600B7E151 /* MenuBarTranslator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9C218D4256FA8AB00B7E151 /* Build configuration list for PBXNativeTarget "FirstMenuBarApp" */;
+			buildConfigurationList = D9C218D4256FA8AB00B7E151 /* Build configuration list for PBXNativeTarget "MenuBarTranslator" */;
 			buildPhases = (
 				D9C218BA256FA8A600B7E151 /* Sources */,
 				D9C218BB256FA8A600B7E151 /* Frameworks */,
@@ -92,9 +178,9 @@
 			);
 			dependencies = (
 			);
-			name = FirstMenuBarApp;
+			name = MenuBarTranslator;
 			productName = FirstMenuBarApp;
-			productReference = D9C218BE256FA8A600B7E151 /* FirstMenuBarApp.app */;
+			productReference = D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +197,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D9C218B9256FA8A600B7E151 /* Build configuration list for PBXProject "FirstMenuBarApp" */;
+			buildConfigurationList = D9C218B9256FA8A600B7E151 /* Build configuration list for PBXProject "MenuBarTranslator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +210,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9C218BD256FA8A600B7E151 /* FirstMenuBarApp */,
+				D9C218BD256FA8A600B7E151 /* MenuBarTranslator */,
 			);
 		};
 /* End PBXProject section */
@@ -147,9 +233,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C218C7256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodeld in Sources */,
-				D9C218C4256FA8A700B7E151 /* ContentView.swift in Sources */,
+				D94224332572829F00DC9383 /* DictionaryView.swift in Sources */,
+				D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */,
+				D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */,
+				D9422438257283F000DC9383 /* TranslationView.swift in Sources */,
+				D94224412572866300DC9383 /* MainView.swift in Sources */,
+				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
+				D942243D2572862000DC9383 /* LanguageModel.swift in Sources */,
+				D9C218C7256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld in Sources */,
+				D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */,
+				D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */,
 				D9C218C2256FA8A700B7E151 /* AppDelegate.swift in Sources */,
+				D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */,
+				D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,20 +383,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FirstMenuBarApp/FirstMenuBarApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuBarTranslator/MenuBarTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"FirstMenuBarApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MenuBarTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = MT83Z9G3C6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FirstMenuBarApp/Info.plist;
+				INFOPLIST_FILE = MenuBarTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.FirstMenuBarApp;
+				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -311,20 +407,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FirstMenuBarApp/FirstMenuBarApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MenuBarTranslator/MenuBarTranslator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"FirstMenuBarApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MenuBarTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = MT83Z9G3C6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FirstMenuBarApp/Info.plist;
+				INFOPLIST_FILE = MenuBarTranslator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.FirstMenuBarApp;
+				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -333,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9C218B9256FA8A600B7E151 /* Build configuration list for PBXProject "FirstMenuBarApp" */ = {
+		D9C218B9256FA8A600B7E151 /* Build configuration list for PBXProject "MenuBarTranslator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9C218D2256FA8AB00B7E151 /* Debug */,
@@ -342,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9C218D4256FA8AB00B7E151 /* Build configuration list for PBXNativeTarget "FirstMenuBarApp" */ = {
+		D9C218D4256FA8AB00B7E151 /* Build configuration list for PBXNativeTarget "MenuBarTranslator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9C218D5256FA8AB00B7E151 /* Debug */,
@@ -354,13 +450,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D9C218C5256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodeld */ = {
+		D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D9C218C6256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodel */,
+				D9C218C6256FA8A700B7E151 /* MenuBarTranslator.xcdatamodel */,
 			);
-			currentVersion = D9C218C6256FA8A700B7E151 /* FirstMenuBarApp.xcdatamodel */;
-			path = FirstMenuBarApp.xcdatamodeld;
+			currentVersion = D9C218C6256FA8A700B7E151 /* MenuBarTranslator.xcdatamodel */;
+			path = MenuBarTranslator.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
