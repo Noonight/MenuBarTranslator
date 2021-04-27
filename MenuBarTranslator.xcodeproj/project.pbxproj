@@ -3,20 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9276899261625D300B9A74D /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9276898261625D300B9A74D /* View+Frame.swift */; };
+		D927689D2617462D00B9A74D /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927689C2617462D00B9A74D /* LoadingButton.swift */; };
+		D92768A02617742400B9A74D /* DictionaryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927689F2617742400B9A74D /* DictionaryCellView.swift */; };
+		D93ABB2E25809DAE0062519B /* LoadingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93ABB2D25809DAE0062519B /* LoadingTextField.swift */; };
+		D93BC23A260999AD00169C7F /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93BC239260999AD00169C7F /* TextView.swift */; };
+		D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93BDC822610B6880084E4C7 /* DictionaryViewModel.swift */; };
+		D93BDCA02611A1E60084E4C7 /* MenuBarTranslator.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */; };
 		D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */; };
 		D94224332572829F00DC9383 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94224322572829F00DC9383 /* DictionaryView.swift */; };
 		D9422438257283F000DC9383 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422437257283F000DC9383 /* TranslationView.swift */; };
 		D942243D2572862000DC9383 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942243C2572862000DC9383 /* LanguageModel.swift */; };
 		D94224412572866300DC9383 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94224402572866300DC9383 /* MainView.swift */; };
 		D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422445257286D300DC9383 /* SavedTranslatesModel.swift */; };
+		D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */; };
 		D9685552257A6B400011D392 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9685551257A6B400011D392 /* TranslateModel.swift */; };
+		D96CFB6026074C1B00DF1A77 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = D96CFB5F26074C1B00DF1A77 /* Introspect */; };
+		D983577526352FA700B68A33 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577426352FA700B68A33 /* CoreDataService.swift */; };
+		D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357782635319400B68A33 /* CoreDataHelper.swift */; };
+		D983577C263531D300B68A33 /* DBHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577B263531D300B68A33 /* DBHelperProtocol.swift */; };
+		D983578B2636F1F000B68A33 /* SavedWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357892636F1F000B68A33 /* SavedWord+CoreDataClass.swift */; };
+		D983578C2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983578A2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift */; };
+		D983579026387C8E00B68A33 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983578F26387C8D00B68A33 /* DateHelper.swift */; };
 		D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBF649257A45210041AC34 /* TranslationViewModel.swift */; };
 		D9C218C2256FA8A700B7E151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C1256FA8A700B7E151 /* AppDelegate.swift */; };
-		D9C218C7256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */; };
 		D9C218C9256FA8AB00B7E151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218C8256FA8AB00B7E151 /* Assets.xcassets */; };
 		D9C218CC256FA8AB00B7E151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CB256FA8AB00B7E151 /* Preview Assets.xcassets */; };
 		D9C218CF256FA8AB00B7E151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CD256FA8AB00B7E151 /* Main.storyboard */; };
@@ -26,13 +40,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9276898261625D300B9A74D /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
+		D927689C2617462D00B9A74D /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		D927689F2617742400B9A74D /* DictionaryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCellView.swift; sourceTree = "<group>"; };
+		D93ABB2D25809DAE0062519B /* LoadingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTextField.swift; sourceTree = "<group>"; };
+		D93BC239260999AD00169C7F /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		D93BDC822610B6880084E4C7 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 		D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRuToggleButtonsView.swift; sourceTree = "<group>"; };
 		D94224322572829F00DC9383 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		D9422437257283F000DC9383 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D942243C2572862000DC9383 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		D94224402572866300DC9383 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D9422445257286D300DC9383 /* SavedTranslatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTranslatesModel.swift; sourceTree = "<group>"; };
+		D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDictionaryTitleStyle.swift; sourceTree = "<group>"; };
 		D9685551257A6B400011D392 /* TranslateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateModel.swift; sourceTree = "<group>"; };
+		D983577426352FA700B68A33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		D98357782635319400B68A33 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		D983577B263531D300B68A33 /* DBHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelperProtocol.swift; sourceTree = "<group>"; };
+		D98357892636F1F000B68A33 /* SavedWord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedWord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D983578A2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D983578F26387C8D00B68A33 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		D9BBF649257A45210041AC34 /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
 		D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C218C1256FA8A700B7E151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96CFB6026074C1B00DF1A77 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,10 +104,37 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D9276897261625BE00B9A74D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9276898261625D300B9A74D /* View+Frame.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D92768A6261775B800B9A74D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D927689F2617742400B9A74D /* DictionaryCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D93BDC852611977A0084E4C7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D98357892636F1F000B68A33 /* SavedWord+CoreDataClass.swift */,
+				D983578A2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		D94224312572828F00DC9383 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				D92768A6261775B800B9A74D /* Cell */,
 				D94224322572829F00DC9383 /* DictionaryView.swift */,
+				D93BDC822610B6880084E4C7 /* DictionaryViewModel.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -96,11 +151,51 @@
 		D942243B2572861300DC9383 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D93BDC852611977A0084E4C7 /* CoreData */,
 				D942243C2572862000DC9383 /* LanguageModel.swift */,
 				D9422445257286D300DC9383 /* SavedTranslatesModel.swift */,
 				D9685551257A6B400011D392 /* TranslateModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D95FAA59261CC10C00AD5F91 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */,
+				D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		D95FAA5D261CC20600AD5F91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */,
+				D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */,
+				D93ABB2D25809DAE0062519B /* LoadingTextField.swift */,
+				D93BC239260999AD00169C7F /* TextView.swift */,
+				D927689C2617462D00B9A74D /* LoadingButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D983577326352F8100B68A33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D983577426352FA700B68A33 /* CoreDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D98357772635318A00B68A33 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D98357782635319400B68A33 /* CoreDataHelper.swift */,
+				D983577B263531D300B68A33 /* DBHelperProtocol.swift */,
+				D983578F26387C8D00B68A33 /* DateHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D9BBF63F257A170F0041AC34 /* API */ = {
@@ -130,6 +225,9 @@
 		D9C218C0256FA8A700B7E151 /* MenuBarTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				D98357772635318A00B68A33 /* Helpers */,
+				D983577326352F8100B68A33 /* Services */,
+				D9276897261625BE00B9A74D /* Extensions */,
 				D9BBF63F257A170F0041AC34 /* API */,
 				D942243B2572861300DC9383 /* Models */,
 				D9EEC6F6256FC04F001EAFFE /* Custom */,
@@ -156,9 +254,8 @@
 		D9EEC6F6256FC04F001EAFFE /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */,
-				D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */,
-				D942242E2572749300DC9383 /* EnRuToggleButtonsView.swift */,
+				D95FAA5D261CC20600AD5F91 /* Views */,
+				D95FAA59261CC10C00AD5F91 /* Styles */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -179,6 +276,9 @@
 			dependencies = (
 			);
 			name = MenuBarTranslator;
+			packageProductDependencies = (
+				D96CFB5F26074C1B00DF1A77 /* Introspect */,
+			);
 			productName = FirstMenuBarApp;
 			productReference = D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */;
 			productType = "com.apple.product-type.application";
@@ -190,7 +290,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					D9C218BD256FA8A600B7E151 = {
 						CreatedOnToolsVersion = 12.2;
@@ -206,6 +306,9 @@
 				Base,
 			);
 			mainGroup = D9C218B5256FA8A600B7E151;
+			packageReferences = (
+				D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = D9C218BF256FA8A600B7E151 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93BDCA02611A1E60084E4C7 /* MenuBarTranslator.xcdatamodeld in Resources */,
 				D9C218CF256FA8AB00B7E151 /* Main.storyboard in Resources */,
 				D9C218CC256FA8AB00B7E151 /* Preview Assets.xcassets in Resources */,
 				D9C218C9256FA8AB00B7E151 /* Assets.xcassets in Resources */,
@@ -233,19 +337,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D983579026387C8E00B68A33 /* DateHelper.swift in Sources */,
 				D94224332572829F00DC9383 /* DictionaryView.swift in Sources */,
+				D983577C263531D300B68A33 /* DBHelperProtocol.swift in Sources */,
+				D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */,
 				D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */,
+				D927689D2617462D00B9A74D /* LoadingButton.swift in Sources */,
 				D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */,
 				D9422438257283F000DC9383 /* TranslationView.swift in Sources */,
 				D94224412572866300DC9383 /* MainView.swift in Sources */,
 				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
+				D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */,
+				D983577526352FA700B68A33 /* CoreDataService.swift in Sources */,
+				D983578C2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift in Sources */,
 				D942243D2572862000DC9383 /* LanguageModel.swift in Sources */,
-				D9C218C7256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld in Sources */,
 				D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */,
+				D93BC23A260999AD00169C7F /* TextView.swift in Sources */,
 				D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */,
+				D983578B2636F1F000B68A33 /* SavedWord+CoreDataClass.swift in Sources */,
+				D93ABB2E25809DAE0062519B /* LoadingTextField.swift in Sources */,
 				D9C218C2256FA8A700B7E151 /* AppDelegate.swift in Sources */,
+				D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */,
 				D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */,
+				D92768A02617742400B9A74D /* DictionaryCellView.swift in Sources */,
 				D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */,
+				D9276899261625D300B9A74D /* View+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MenuBarTranslator/MenuBarTranslator.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuBarTranslator/Preview Content\"";
@@ -395,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -408,6 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MenuBarTranslator/MenuBarTranslator.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MenuBarTranslator/Preview Content\"";
@@ -419,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -448,6 +566,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D96CFB5F26074C1B00DF1A77 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */ = {

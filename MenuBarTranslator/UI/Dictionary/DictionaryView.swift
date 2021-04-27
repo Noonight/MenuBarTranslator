@@ -10,29 +10,47 @@ import CoreData
 
 struct DictionaryView: View {
     
-    @Environment(\.managedObjectContext) var moc
+    @StateObject var viewModel = DictionaryViewModel()
     
-    var savedWords: [SavedTranslates] = [
-        SavedTranslates(ru: "Привет", en: "Hello"),
-        SavedTranslates(ru: "Пока", en: "Bye"),
-        SavedTranslates(ru: "Доброе утро", en: "Good morning"),
-        SavedTranslates(ru: "Действие", en: "Action")
-    ]
+    @State var selection: SavedWord? = nil
     
     var body: some View {
-        List {
-            HStack {
-                Text("en")
-                Spacer()
-                Text("ру")
-            }
-            ForEach(savedWords) { (translation: SavedTranslates) in
-                HStack {
-                    Text(translation.en)
-                        .background(Color.red)
-                    Spacer()
-                    Text(translation.ru)
-                        .background(Color.blue)
+        VStack {
+            header
+            
+            list
+        }
+        .padding([.leading, .bottom, .trailing], 6)
+        .onAppear {
+            viewModel.onAppear()
+        }
+    }
+    
+    var header: some View {
+        HStack(spacing: 4) {
+            Text("en")
+                .dictionaryHeaderStyle()
+            Text("ru")
+                .dictionaryHeaderStyle()
+        }
+        .frame(type: .wide)
+        .frame(height: 25)
+    }
+    
+    var list: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.savedWords) { (savedWord: SavedWord) in
+                    DictionaryCellView(
+                        savedWord: savedWord,
+                        updateBtnAction: {
+                            
+                        }, deleteBtnAction: {
+                            
+                        })
+                }
+                .onDeleteCommand {
+                    viewModel.deleteSelectedWord(selection)
                 }
             }
         }

@@ -6,25 +6,65 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct TranslationView: View {
-    @ObservedObject var viewModel = TranslationViewModel()
+    @Environment(\.managedObjectContext) var moc
+    @StateObject var viewModel = TranslationViewModel()
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 6) {
             VStack(alignment: .leading) {
-                Text("From").font(.title)
+                HStack {
+                    Text("From")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    Spacer()
+                    Group {
+                        loadingView
+                        saveButton
+                    }
+                }
                 EnRuToggleButtonsView(pickedLanguage: self.$viewModel.fromLanguage)
-                    .frame(height: 50)
+                    .frame(height: 30)
             }
             
-            HStack {
-                TextField("Target:", text: self.$viewModel.fromText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("To:", text: self.$viewModel.translation.text)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            translationView
+        }
+        .padding([.leading, .bottom, .trailing], 6)
+    }
+    
+    @ViewBuilder var loadingView: some View {
+        if viewModel.loading {
+            if #available(OSX 11.0, *) {
+                ProgressView()
+                    .frame(width: 5, height: 5)
+                    .scaleEffect(0.5)
+            } else {
+                Text("Translating ...")
             }
-        }.padding()
+        }
+    }
+    
+    @ViewBuilder var saveButton: some View {
+        if !viewModel.loading && viewModel.translation.text.count >= 1 {
+            Spacer()
+            LoadingButton(text: "Save", isLoading: $viewModel.loading) {
+                viewModel.saveWord()
+            }
+        }
+    }
+    
+    @ViewBuilder var translationView: some View {
+        HStack {
+            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
+                .padding([.top, .bottom], 6)
+                .background(Color.secondary)
+                .cornerRadius(5)
+            
+            TextView(text: self.$viewModel.translation.text, textColor: nil)
+                .padding([.top, .bottom], 6)
+        }
     }
 }
 

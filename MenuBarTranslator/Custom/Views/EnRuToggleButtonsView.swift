@@ -15,7 +15,7 @@ struct EnRuToggleButtonsView: View {
     @State private var ru: Bool = false
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 6) {
             ToggleButtonView(title: "English", toggle: $en) { isTapped in
                 if isTapped {
                     pickedLanguage = Language.en

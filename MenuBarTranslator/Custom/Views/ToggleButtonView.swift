@@ -34,7 +34,7 @@ struct ToggleButtonView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
                     .foregroundColor(nil)
-                    .shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
+                    .shadow(color: .gray, radius: 5, x: 0.0, y: 0.0)
                 Text(title).foregroundColor(.black)
             }
             .onTapGesture {

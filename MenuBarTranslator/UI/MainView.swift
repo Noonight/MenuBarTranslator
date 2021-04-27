@@ -17,7 +17,8 @@ struct MainView: View {
             DictionaryView()
                 .tabItem { Text("Dictionary") }
         }
-        .padding()
+        .accentColor(.accentColor)
+        .padding(.top, 6)
     }
 }
 
