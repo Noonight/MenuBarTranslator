@@ -29,6 +29,10 @@
 		D983578B2636F1F000B68A33 /* SavedWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357892636F1F000B68A33 /* SavedWord+CoreDataClass.swift */; };
 		D983578C2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983578A2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift */; };
 		D983579026387C8E00B68A33 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983578F26387C8D00B68A33 /* DateHelper.swift */; };
+		D983579326394C4E00B68A33 /* Array+SavedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983579226394C4E00B68A33 /* Array+SavedWord.swift */; };
+		D983579C26394E7800B68A33 /* MenuBarTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983579B26394E7800B68A33 /* MenuBarTranslatorTests.swift */; };
+		D98357A726397BF300B68A33 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357A626397BF300B68A33 /* WordView.swift */; };
+		D98357AD26397C6200B68A33 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357AC26397C6200B68A33 /* WordViewModel.swift */; };
 		D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BBF649257A45210041AC34 /* TranslationViewModel.swift */; };
 		D9C218C2256FA8A700B7E151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C218C1256FA8A700B7E151 /* AppDelegate.swift */; };
 		D9C218C9256FA8AB00B7E151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218C8256FA8AB00B7E151 /* Assets.xcassets */; };
@@ -38,6 +42,16 @@
 		D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEC6F7256FC078001EAFFE /* BlueButtonStyle.swift */; };
 		D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EEC6FB256FC279001EAFFE /* ToggleButtonView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D983579E26394E7800B68A33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9C218B6256FA8A600B7E151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9C218BD256FA8A600B7E151;
+			remoteInfo = MenuBarTranslator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D9276898261625D300B9A74D /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
@@ -60,6 +74,12 @@
 		D98357892636F1F000B68A33 /* SavedWord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedWord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D983578A2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D983578F26387C8D00B68A33 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		D983579226394C4E00B68A33 /* Array+SavedWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SavedWord.swift"; sourceTree = "<group>"; };
+		D983579926394E7800B68A33 /* MenuBarTranslatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuBarTranslatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D983579B26394E7800B68A33 /* MenuBarTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarTranslatorTests.swift; sourceTree = "<group>"; };
+		D983579D26394E7800B68A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98357A626397BF300B68A33 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		D98357AC26397C6200B68A33 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		D9BBF649257A45210041AC34 /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
 		D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarTranslator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C218C1256FA8A700B7E151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D983579626394E7800B68A33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9C218BB256FA8A600B7E151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D94224402572866300DC9383 /* MainView.swift */,
+				D98357A526397BDC00B68A33 /* SavedWord */,
 				D9422436257283A000DC9383 /* Translation */,
 				D94224312572828F00DC9383 /* Dictionary */,
 			);
@@ -108,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D9276898261625D300B9A74D /* View+Frame.swift */,
+				D983579226394C4E00B68A33 /* Array+SavedWord.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +227,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D983579A26394E7800B68A33 /* MenuBarTranslatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D983579B26394E7800B68A33 /* MenuBarTranslatorTests.swift */,
+				D983579D26394E7800B68A33 /* Info.plist */,
+			);
+			path = MenuBarTranslatorTests;
+			sourceTree = "<group>";
+		};
+		D98357A526397BDC00B68A33 /* SavedWord */ = {
+			isa = PBXGroup;
+			children = (
+				D98357A626397BF300B68A33 /* WordView.swift */,
+				D98357AC26397C6200B68A33 /* WordViewModel.swift */,
+			);
+			path = SavedWord;
+			sourceTree = "<group>";
+		};
 		D9BBF63F257A170F0041AC34 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C218C0256FA8A700B7E151 /* MenuBarTranslator */,
+				D983579A26394E7800B68A33 /* MenuBarTranslatorTests */,
 				D9C218BF256FA8A600B7E151 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -218,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */,
+				D983579926394E7800B68A33 /* MenuBarTranslatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +312,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D983579826394E7800B68A33 /* MenuBarTranslatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D98357A026394E7800B68A33 /* Build configuration list for PBXNativeTarget "MenuBarTranslatorTests" */;
+			buildPhases = (
+				D983579526394E7800B68A33 /* Sources */,
+				D983579626394E7800B68A33 /* Frameworks */,
+				D983579726394E7800B68A33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D983579F26394E7800B68A33 /* PBXTargetDependency */,
+			);
+			name = MenuBarTranslatorTests;
+			productName = MenuBarTranslatorTests;
+			productReference = D983579926394E7800B68A33 /* MenuBarTranslatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D9C218BD256FA8A600B7E151 /* MenuBarTranslator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9C218D4256FA8AB00B7E151 /* Build configuration list for PBXNativeTarget "MenuBarTranslator" */;
@@ -289,9 +356,13 @@
 		D9C218B6256FA8A600B7E151 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					D983579826394E7800B68A33 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D9C218BD256FA8A600B7E151;
+					};
 					D9C218BD256FA8A600B7E151 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -314,11 +385,19 @@
 			projectRoot = "";
 			targets = (
 				D9C218BD256FA8A600B7E151 /* MenuBarTranslator */,
+				D983579826394E7800B68A33 /* MenuBarTranslatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D983579726394E7800B68A33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9C218BC256FA8A600B7E151 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +412,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D983579526394E7800B68A33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D983579C26394E7800B68A33 /* MenuBarTranslatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9C218BA256FA8A600B7E151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,9 +430,11 @@
 				D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */,
 				D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */,
 				D927689D2617462D00B9A74D /* LoadingButton.swift in Sources */,
+				D98357AD26397C6200B68A33 /* WordViewModel.swift in Sources */,
 				D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */,
 				D9422438257283F000DC9383 /* TranslationView.swift in Sources */,
 				D94224412572866300DC9383 /* MainView.swift in Sources */,
+				D983579326394C4E00B68A33 /* Array+SavedWord.swift in Sources */,
 				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
 				D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */,
 				D983577526352FA700B68A33 /* CoreDataService.swift in Sources */,
@@ -360,12 +449,21 @@
 				D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */,
 				D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */,
 				D92768A02617742400B9A74D /* DictionaryCellView.swift in Sources */,
+				D98357A726397BF300B68A33 /* WordView.swift in Sources */,
 				D9BBF64A257A45210041AC34 /* TranslationViewModel.swift in Sources */,
 				D9276899261625D300B9A74D /* View+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D983579F26394E7800B68A33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9C218BD256FA8A600B7E151 /* MenuBarTranslator */;
+			targetProxy = D983579E26394E7800B68A33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D9C218CD256FA8AB00B7E151 /* Main.storyboard */ = {
@@ -379,6 +477,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D98357A126394E7800B68A33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MT83Z9G3C6;
+				INFOPLIST_FILE = MenuBarTranslatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuBarTranslator.app/Contents/MacOS/MenuBarTranslator";
+			};
+			name = Debug;
+		};
+		D98357A226394E7800B68A33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MT83Z9G3C6;
+				INFOPLIST_FILE = MenuBarTranslatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = my.aiur.MenuBarTranslatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenuBarTranslator.app/Contents/MacOS/MenuBarTranslator";
+			};
+			name = Release;
+		};
 		D9C218D2256FA8AB00B7E151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -547,6 +687,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D98357A026394E7800B68A33 /* Build configuration list for PBXNativeTarget "MenuBarTranslatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98357A126394E7800B68A33 /* Debug */,
+				D98357A226394E7800B68A33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9C218B9256FA8A600B7E151 /* Build configuration list for PBXProject "MenuBarTranslator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -44,7 +44,7 @@ class CoreDataHelper {
 extension CoreDataHelper: DBHelperProtocol {
     func create(_ object: NSManagedObject) {
         do {
-            try! context.save()
+            try context.save()
         } catch {
             fatalError("error saving context while creating an object")
         }

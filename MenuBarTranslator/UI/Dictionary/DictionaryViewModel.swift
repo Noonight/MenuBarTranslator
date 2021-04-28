@@ -11,8 +11,10 @@ import Combine
 protocol DictionaryViewModelProtocol {
     var savedWords: [SavedWord] { get }
     func fetchWords()
-    func deleteSelectedWord(_ word: SavedWord?)
+    func deleteWord(_ word: SavedWord)
     func onAppear()
+    func increaseRepeatCounter(for word: SavedWord)
+    func decreaseRepeatCounter(for word: SavedWord)
 }
 
 final class DictionaryViewModel: ObservableObject {
@@ -26,6 +28,16 @@ final class DictionaryViewModel: ObservableObject {
 }
 
 extension DictionaryViewModel: DictionaryViewModelProtocol {
+    func increaseRepeatCounter(for word: SavedWord) {
+        coreDataService.increaseRepeat(for: word)
+        fetchWords()
+    }
+    
+    func decreaseRepeatCounter(for word: SavedWord) {
+        coreDataService.decreaseRepeat(for: word)
+        fetchWords()
+    }
+    
     func onAppear() {
         fetchWords()
     }
@@ -34,12 +46,10 @@ extension DictionaryViewModel: DictionaryViewModelProtocol {
         savedWords = coreDataService.fetchWordList()
     }
     
-    func deleteSelectedWord(_ word: SavedWord?) {
-        if let selectedWord = word {
-            if let index = savedWords.firstIndex(of: selectedWord) {
-                savedWords.remove(at: index)
-            }
-            coreDataService.deleteWord(savedWord: selectedWord)
+    func deleteWord(_ word: SavedWord) {
+        if let index = savedWords.firstIndex(of: word) {
+            savedWords.remove(at: index)
         }
+        coreDataService.deleteWord(savedWord: word)
     }
 }

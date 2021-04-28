@@ -9,7 +9,6 @@ import SwiftUI
 import Introspect
 
 struct TranslationView: View {
-    @Environment(\.managedObjectContext) var moc
     @StateObject var viewModel = TranslationViewModel()
     
     var body: some View {

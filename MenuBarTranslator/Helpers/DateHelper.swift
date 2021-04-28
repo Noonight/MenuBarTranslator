@@ -10,7 +10,7 @@ import Foundation
 final class DateHelper {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM.dd.yyyy"
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter
     }()
     

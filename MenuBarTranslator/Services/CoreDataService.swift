@@ -11,8 +11,10 @@ protocol CoreDataServiceProtocol {
     func findByUUID(uuid: UUID) -> SavedWord?
     func fetchWordList() -> [SavedWord]
     func addWord(en: String, ru: String)
-    func deleteWord(id: UUID)
     func deleteWord(savedWord: SavedWord)
+    func increaseRepeat(for word: SavedWord)
+    func decreaseRepeat(for word: SavedWord)
+    func updateWord(_ word: SavedWord)
 }
 
 class CoreDataService {
@@ -26,6 +28,26 @@ class CoreDataService {
 // MARK: - CoreDataServiceProtocol
 
 extension CoreDataService: CoreDataServiceProtocol {
+    func updateWord(_ word: SavedWord) {
+        coreDataHelper.update(word)
+    }
+    
+    func increaseRepeat(for word: SavedWord) {
+        let repeatedWord = word
+        repeatedWord.repeatCounter += 1
+        repeatedWord.lastRepeatDate = Date()
+        coreDataHelper.update(repeatedWord)
+    }
+    
+    func decreaseRepeat(for word: SavedWord) {
+        let repeatedWord = word
+        if repeatedWord.repeatCounter > 0 {
+            repeatedWord.repeatCounter -= 1
+        }
+        repeatedWord.lastRepeatDate = Date()
+        coreDataHelper.update(repeatedWord)
+    }
+    
     func findByUUID(uuid: UUID) -> SavedWord? {
         let result = coreDataHelper.fetchFirst(SavedWord.self, predicate: NSPredicate(format: "uuid = %@", uuid.uuidString))
         switch result {
@@ -54,12 +76,6 @@ extension CoreDataService: CoreDataServiceProtocol {
         newWord.en = en
         newWord.ru = ru
         coreDataHelper.create(newWord)
-    }
-    
-    func deleteWord(id: UUID) {
-        if let objectById = findByUUID(uuid: id) {
-            coreDataHelper.delete(objectById)
-        }
     }
     
     func deleteWord(savedWord: SavedWord) {
