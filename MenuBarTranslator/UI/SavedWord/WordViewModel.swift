@@ -13,6 +13,7 @@ protocol WordViewModelProtocol {
     func decreaseRepeatCounter()
     func updateWord()
     func deleteWord()
+    func updateViewData()
 }
 
 final class WordViewModel: ObservableObject {
@@ -27,24 +28,40 @@ final class WordViewModel: ObservableObject {
 }
 
 extension WordViewModel: WordViewModelProtocol {
+    internal func updateViewData() {
+        let words = coreDataService.fetchWordList()
+        word = words.filter { (sw: SavedWord) in
+            sw.id! == self.word?.id!
+        }.first
+//        if let unwrappedWord = word, let id = unwrappedWord.id {
+//            word = coreDataService.findByUUID(uuid: id)
+//        } else {
+//            print("Word is nil")
+//        }
+    }
+    
     func increaseRepeatCounter() {
         guard let word = word else { return }
         coreDataService.increaseRepeat(for: word)
+//        updateViewData()
     }
     
     func decreaseRepeatCounter() {
         guard let word = word else { return }
         coreDataService.decreaseRepeat(for: word)
+//        updateViewData()
     }
     
     func updateWord() {
         guard let word = word else { return }
         coreDataService.updateWord(word)
+        updateViewData()
     }
     
     func deleteWord() {
         guard let word = word else { return }
         coreDataService.deleteWord(savedWord: word)
+//        updateViewData()
         // do some action for close window
     }
     

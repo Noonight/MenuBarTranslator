@@ -22,7 +22,10 @@ struct DictionaryCellView: View {
     
     @State var showSheet: Bool = false
     
+    let wordViewCloseDelegate: WordViewCloseDelegate
+    
     var body: some View {
+        
         VStack {
             
             words
@@ -35,9 +38,6 @@ struct DictionaryCellView: View {
         .padding(4)
         .background(Color.secondary)
         .cornerRadius(5)
-        //        .contextMenu {
-        //            Text("Hello from context")
-        //        }
     }
     
     var words: some View {
@@ -71,7 +71,8 @@ struct DictionaryCellView: View {
                     .foregroundColor(.black)
             }
             .popover(isPresented: $showSheet) {
-                WordView(isShown: $showSheet)
+                goToWordView()
+//                WordView(viewModel: WordViewModel(), isShown: $showSheet)
             }
             
             Button(action: {
@@ -108,6 +109,12 @@ struct DictionaryCellView: View {
             Text("\(DateHelper.format(date: lastDate))")
                 .foregroundColor(.black)
         }
+    }
+    
+    func goToWordView() -> some View {
+        let viewModel = WordViewModel()
+        viewModel.word = savedWord
+        return WordView(viewModel: viewModel, isShown: $showSheet, wordViewCloseDelegate: wordViewCloseDelegate)
     }
 }
 

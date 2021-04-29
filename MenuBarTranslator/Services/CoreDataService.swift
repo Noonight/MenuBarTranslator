@@ -53,7 +53,8 @@ extension CoreDataService: CoreDataServiceProtocol {
         switch result {
         case .success(let savedWord):
             return savedWord
-        case .failure(_):
+        case .failure(let error):
+            print(error)
             return nil
         }
     }

@@ -45,7 +45,7 @@ struct DictionaryView: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.savedWords) { (savedWord: SavedWord) in
-                    DictionaryCellView(savedWord: savedWord, cellDelegate: self)
+                    DictionaryCellView(savedWord: savedWord, cellDelegate: self, wordViewCloseDelegate: self)
                 }
 //                .onDeleteCommand {
 //                    viewModel.deleteWord(selection)
@@ -81,6 +81,14 @@ extension DictionaryView: DictionaryCellProtocol {
     
     func decreaseBtn(word: SavedWord) {
         viewModel.decreaseRepeatCounter(for: word)
+    }
+}
+
+// MARK: - WordViewCloseDelegate
+
+extension DictionaryView: WordViewCloseDelegate {
+    func close() {
+        viewModel.fetchWords()
     }
 }
 
