@@ -15,6 +15,7 @@ class CoreDataHelper {
     static let shared = CoreDataHelper()
     
     var context: NSManagedObjectContext { persistentContainer.viewContext }
+//    var context: NSManagedObjectContext { persistentContainer.newBackgroundContext() }
     
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "MenuBarTranslator")
@@ -62,6 +63,22 @@ extension CoreDataHelper: DBHelperProtocol {
         } catch {
             return .failure(error)
         }
+//        context.performAndWait {
+//            do {
+//                let result = try request.execute()
+//                return result
+//            } catch {
+//                return
+//                print("error")
+//            }
+//            do {
+//                let result = try context.fetch(request)
+//                return .success(result as? [T] ?? [])
+//                return result as? [T]
+//            } catch {
+//                return .failure(error)
+//            }
+//        }
     }
     
     func fetchFirst<T: NSManagedObject>(_ objectType: T.Type, predicate: NSPredicate?) -> Result<T?, Error> {

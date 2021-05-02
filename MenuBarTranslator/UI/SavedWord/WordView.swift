@@ -45,6 +45,8 @@ struct WordView: View {
                 .frame(width: 300, height: 100)
                 .padding()
             }
+        }.onDisappear {
+            close()
         }
     }
     
@@ -52,49 +54,41 @@ struct WordView: View {
         HStack {
             Text(viewModel.word?.en ?? "en")
                 .frame(type: .wide)
+                .frame(alignment: .topLeading)
                 .foregroundColor(.white)
             Text(viewModel.word?.ru ?? "ру")
                 .frame(type: .wide)
+                .frame(alignment: .topLeading)
                 .foregroundColor(.white)
             
         }
     }
     
     var manageButtons: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Button(action: {
-                    close()
-                }, label: {
-                    Image(systemName: "chevron.backward.circle.fill")
-                        .foregroundColor(.white)
-                })
+        HStack {
+            
+            repeatCounter
+            
+            Spacer()
+            
+            date
+            
+            Spacer()
+            
+            Button(action: {
+                //                    viewModel.updateWord()
+                close()
+            }) {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.white)
             }
-            HStack {
-                
-                repeatCounter
-                
-                Spacer()
-                
-                date
-                
-                Spacer()
-                    
-                Button(action: {
-                    viewModel.updateWord()
-                }) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.white)
-                }
-                
-                Button(action: {
-                    viewModel.deleteWord()
-                    close()
-                }) {
-                    Image(systemName: "trash.circle.fill")
-                        .foregroundColor(.white)
-                }
+            
+            Button(action: {
+                viewModel.deleteWord()
+                close()
+            }) {
+                Image(systemName: "trash.circle.fill")
+                    .foregroundColor(.white)
             }
         }
     }
