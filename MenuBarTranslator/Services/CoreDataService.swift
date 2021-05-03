@@ -9,12 +9,18 @@ import Foundation
 
 protocol CoreDataServiceProtocol {
     func findByUUID(uuid: UUID) -> SavedWord?
-    func fetchWordList() -> [SavedWord]
+    func fetchWordList(sortBy: SortOption?) -> [SavedWord]
     func addWord(en: String, ru: String)
     func deleteWord(savedWord: SavedWord)
     func increaseRepeat(for word: SavedWord)
     func decreaseRepeat(for word: SavedWord)
     func updateWord(_ word: SavedWord)
+}
+
+extension CoreDataServiceProtocol {
+    func fetchWordList(sortBy: [SortOption]? = nil) -> [SavedWord] {
+        fetchWordList(sortBy: sortBy)
+    }
 }
 
 class CoreDataService {
@@ -52,7 +58,6 @@ extension CoreDataService: CoreDataServiceProtocol {
         let result = coreDataHelper.fetchFirst(SavedWord.self, predicate: NSPredicate(format: "id = %@", uuid.uuidString))
         switch result {
         case .success(let savedWord):
-            print(savedWord)
             return savedWord
         case .failure(let error):
             print(error)
@@ -60,8 +65,13 @@ extension CoreDataService: CoreDataServiceProtocol {
         }
     }
     
-    func fetchWordList() -> [SavedWord] {
-        let result: Result<[SavedWord], Error> = coreDataHelper.fetch(SavedWord.self)
+    func fetchWordList(sortBy: SortOption?) -> [SavedWord] {
+        var result: Result<[SavedWord], Error>
+        if let sort = sortBy?.sortDescription() {
+            result = coreDataHelper.fetch(SavedWord.self, sort: sort)
+        } else {
+            result = coreDataHelper.fetch(SavedWord.self)
+        }
         switch result {
         case .success(let savedWords):
             return savedWords

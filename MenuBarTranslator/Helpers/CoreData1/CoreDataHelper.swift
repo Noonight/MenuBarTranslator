@@ -51,11 +51,14 @@ extension CoreDataHelper: DBHelperProtocol {
         }
     }
     
-    func fetch<T: NSManagedObject>(_ objectType: T.Type, predicate: NSPredicate? = nil, limit: Int? = nil) -> Result<[T], Error> {
+    func fetch<T: NSManagedObject>(_ objectType: T.Type, predicate: NSPredicate? = nil, sort: [NSSortDescriptor]? = nil, limit: Int? = nil) -> Result<[T], Error> {
         let request = objectType.fetchRequest()
         request.predicate = predicate
         if let limit = limit {
             request.fetchLimit = limit
+        }
+        if let sort = sort {
+            request.sortDescriptors = sort
         }
         do {
             let result = try context.fetch(request)
@@ -63,22 +66,6 @@ extension CoreDataHelper: DBHelperProtocol {
         } catch {
             return .failure(error)
         }
-//        context.performAndWait {
-//            do {
-//                let result = try request.execute()
-//                return result
-//            } catch {
-//                return
-//                print("error")
-//            }
-//            do {
-//                let result = try context.fetch(request)
-//                return .success(result as? [T] ?? [])
-//                return result as? [T]
-//            } catch {
-//                return .failure(error)
-//            }
-//        }
     }
     
     func fetchFirst<T: NSManagedObject>(_ objectType: T.Type, predicate: NSPredicate?) -> Result<T?, Error> {

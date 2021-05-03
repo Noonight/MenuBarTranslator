@@ -19,8 +19,8 @@
 		D9422438257283F000DC9383 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422437257283F000DC9383 /* TranslationView.swift */; };
 		D942243D2572862000DC9383 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942243C2572862000DC9383 /* LanguageModel.swift */; };
 		D94224412572866300DC9383 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94224402572866300DC9383 /* MainView.swift */; };
-		D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9422445257286D300DC9383 /* SavedTranslatesModel.swift */; };
 		D951BAED263D94CD00F30A37 /* CoreDataService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D951BAEC263D94CD00F30A37 /* CoreDataService2.swift */; };
+		D951BAF6264058A100F30A37 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D951BAF5264058A100F30A37 /* SortOption.swift */; };
 		D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */; };
 		D9685552257A6B400011D392 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9685551257A6B400011D392 /* TranslateModel.swift */; };
 		D96CFB6026074C1B00DF1A77 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = D96CFB5F26074C1B00DF1A77 /* Introspect */; };
@@ -69,8 +69,8 @@
 		D9422437257283F000DC9383 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 		D942243C2572862000DC9383 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		D94224402572866300DC9383 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		D9422445257286D300DC9383 /* SavedTranslatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTranslatesModel.swift; sourceTree = "<group>"; };
 		D951BAEC263D94CD00F30A37 /* CoreDataService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService2.swift; sourceTree = "<group>"; };
+		D951BAF5264058A100F30A37 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDictionaryTitleStyle.swift; sourceTree = "<group>"; };
 		D9685551257A6B400011D392 /* TranslateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateModel.swift; sourceTree = "<group>"; };
 		D983577426352FA700B68A33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -188,12 +188,28 @@
 		D942243B2572861300DC9383 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D951BAF42640587A00F30A37 /* API */,
+				D951BAF12640583500F30A37 /* Private */,
 				D93BDC852611977A0084E4C7 /* CoreData */,
-				D942243C2572862000DC9383 /* LanguageModel.swift */,
-				D9422445257286D300DC9383 /* SavedTranslatesModel.swift */,
-				D9685551257A6B400011D392 /* TranslateModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D951BAF12640583500F30A37 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				D942243C2572862000DC9383 /* LanguageModel.swift */,
+				D951BAF5264058A100F30A37 /* SortOption.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		D951BAF42640587A00F30A37 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D9685551257A6B400011D392 /* TranslateModel.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D95FAA59261CC10C00AD5F91 /* Styles */ = {
@@ -468,11 +484,11 @@
 				D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */,
 				D927689D2617462D00B9A74D /* LoadingButton.swift in Sources */,
 				D98357AD26397C6200B68A33 /* WordViewModel.swift in Sources */,
-				D9422446257286D300DC9383 /* SavedTranslatesModel.swift in Sources */,
 				D9422438257283F000DC9383 /* TranslationView.swift in Sources */,
 				D94224412572866300DC9383 /* MainView.swift in Sources */,
 				D9EE6786263CC99A004A4102 /* CoreDataHelper2.swift in Sources */,
 				D983579326394C4E00B68A33 /* Array+SavedWord.swift in Sources */,
+				D951BAF6264058A100F30A37 /* SortOption.swift in Sources */,
 				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
 				D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */,
 				D983577526352FA700B68A33 /* CoreDataService.swift in Sources */,

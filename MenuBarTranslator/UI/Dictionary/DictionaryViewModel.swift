@@ -10,6 +10,7 @@ import Combine
 
 protocol DictionaryViewModelProtocol {
     var savedWords: [SavedWord] { get }
+    var sortOption: SortOption { get set }
     func fetchWords()
     func deleteWord(_ word: SavedWord)
     func onAppear()
@@ -19,6 +20,7 @@ protocol DictionaryViewModelProtocol {
 
 final class DictionaryViewModel: ObservableObject {
     @Published var savedWords: [SavedWord] = [SavedWord]()
+    @Published var sortOption: SortOption = .relevance
     
     var coreDataService: CoreDataServiceProtocol
     
@@ -43,7 +45,7 @@ extension DictionaryViewModel: DictionaryViewModelProtocol {
     }
     
     func fetchWords() {
-        savedWords = coreDataService.fetchWordList()
+        savedWords = coreDataService.fetchWordList(sortBy: sortOption)
     }
     
     func deleteWord(_ word: SavedWord) {

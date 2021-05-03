@@ -6,19 +6,21 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct DictionaryView: View {
     
     @StateObject var viewModel = DictionaryViewModel()
-    
-    @State var selection: SavedWord? = nil
     
     var body: some View {
         ZStack {
             emptyState
             VStack {
                 header
+                
+                HStack {
+                    Spacer()
+                    filter
+                }
                 
                 list
             }
@@ -41,15 +43,25 @@ struct DictionaryView: View {
         .frame(height: 25)
     }
     
+    var filter: some View {
+        Picker(selection: $viewModel.sortOption,
+               label: Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                .foregroundColor(.white)
+        ) {
+            ForEach(SortOption.allCases, id: \.self) { view in
+                Text(view.rawValue).tag(view)
+            }
+        }.onChange(of: viewModel.sortOption) { _ in
+            viewModel.fetchWords()
+        }
+    }
+    
     var list: some View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.savedWords) { (savedWord: SavedWord) in
                     DictionaryCellView(savedWord: savedWord, cellDelegate: self, wordViewCloseDelegate: self)
                 }
-//                .onDeleteCommand {
-//                    viewModel.deleteWord(selection)
-//                }
             }
         }
     }
