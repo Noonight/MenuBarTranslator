@@ -21,10 +21,19 @@ final class TranslationViewModel: ObservableObject {
     @Published var loading: Bool = false
     @Published var error: String = ""
     
+    private var cancellableSet: Set<AnyCancellable> = []
+    
     var coreDataService: CoreDataServiceProtocol
     
     init(coreDataService: CoreDataServiceProtocol = CoreDataService.shared) {
         self.coreDataService = coreDataService
+        
+        $fromLanguage
+            .sink { (language: Language) in
+                self.fromText.removeAll()
+                self.translation = TranslateModel.placeholder
+            }
+            .store(in: &self.cancellableSet)
         
         $fromText
             .map { [weak self] text -> String in
@@ -51,11 +60,10 @@ final class TranslationViewModel: ObservableObject {
                     .shared
                     .fetchTranslate(
                         text: text,
-                        from: from ?? .ru,
-                        to: to )
+                        from: from ?? .en,
+                        to: to)
             }
             .sink(receiveCompletion: { [weak self] c in
-                print(c)
                 self?.loading = false
             }, receiveValue: { [weak self] translation in
                 self?.translation = translation
@@ -63,8 +71,6 @@ final class TranslationViewModel: ObservableObject {
             })
             .store(in: &self.cancellableSet)
     }
-    
-    private var cancellableSet: Set<AnyCancellable> = []
 }
 
 extension TranslationViewModel: TranslationViewModelProtocol {

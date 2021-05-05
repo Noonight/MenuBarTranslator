@@ -56,12 +56,25 @@ struct TranslationView: View {
     
     @ViewBuilder var translationView: some View {
         HStack {
-            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
+//            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
+//                .padding([.top, .bottom], 6)
+//                .background(Color.secondary)
+//                .cornerRadius(5)
+//
+//            TextView(text: self.$viewModel.translation.text, textColor: nil)
+//                .padding([.top, .bottom], 6)
+            
+            TextEditor(text: self.$viewModel.fromText)
                 .padding([.top, .bottom], 6)
                 .background(Color.secondary)
                 .cornerRadius(5)
-            
-            TextView(text: self.$viewModel.translation.text, textColor: nil)
+                .introspectTextView { (textView: NSTextView) in
+                    textView.backgroundColor = .clear
+                    textView.insertionPointColor = .black
+                    textView.textColor = .black
+                }
+                .foregroundColor(.black)
+            TextEditor(text: self.$viewModel.translation.text)
                 .padding([.top, .bottom], 6)
         }
     }
