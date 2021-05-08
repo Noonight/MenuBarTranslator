@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Introspect
 
 struct TranslationView: View {
     @StateObject var viewModel = TranslationViewModel()
@@ -56,26 +55,34 @@ struct TranslationView: View {
     
     @ViewBuilder var translationView: some View {
         HStack {
-//            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
-//                .padding([.top, .bottom], 6)
-//                .background(Color.secondary)
-//                .cornerRadius(5)
-//
-//            TextView(text: self.$viewModel.translation.text, textColor: nil)
-//                .padding([.top, .bottom], 6)
-            
-            TextEditor(text: self.$viewModel.fromText)
+            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
                 .padding([.top, .bottom], 6)
                 .background(Color.secondary)
                 .cornerRadius(5)
-                .introspectTextView { (textView: NSTextView) in
-                    textView.backgroundColor = .clear
-                    textView.insertionPointColor = .black
-                    textView.textColor = .black
+                .onAppear {
+                    self.viewModel.fromText.removeAll()
                 }
-                .foregroundColor(.black)
-            TextEditor(text: self.$viewModel.translation.text)
+
+            TextView(text: self.$viewModel.translation.text, textColor: nil)
                 .padding([.top, .bottom], 6)
+            
+//            TextEditor(text: self.$viewModel.fromText)
+//                .padding([.top, .bottom], 6)
+//                .background(Color.secondary)
+//                .cornerRadius(5)
+//                .foregroundColor(.black)
+//                .frame(type: .wide)
+//            VStack(alignment: .leading, spacing: 0) {
+//                Text(viewModel.translation.text)
+//                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+//                    .background(Color.red)
+//                    .multilineTextAlignment(.leading)
+//                    .padding([.top, .bottom], 6)
+//
+//                Spacer()
+//            }
+//            .frame(type: .wide)
+            
         }
     }
 }

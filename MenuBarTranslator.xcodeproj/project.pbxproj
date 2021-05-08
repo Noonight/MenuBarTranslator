@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,6 @@
 		D951BAF6264058A100F30A37 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D951BAF5264058A100F30A37 /* SortOption.swift */; };
 		D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */; };
 		D9685552257A6B400011D392 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9685551257A6B400011D392 /* TranslateModel.swift */; };
-		D96CFB6026074C1B00DF1A77 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = D96CFB5F26074C1B00DF1A77 /* Introspect */; };
 		D983577526352FA700B68A33 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577426352FA700B68A33 /* CoreDataService.swift */; };
 		D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357782635319400B68A33 /* CoreDataHelper.swift */; };
 		D983577C263531D300B68A33 /* DBHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577B263531D300B68A33 /* DBHelperProtocol.swift */; };
@@ -114,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96CFB6026074C1B00DF1A77 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +394,6 @@
 			);
 			name = MenuBarTranslator;
 			packageProductDependencies = (
-				D96CFB5F26074C1B00DF1A77 /* Introspect */,
 			);
 			productName = FirstMenuBarApp;
 			productReference = D9C218BE256FA8A600B7E151 /* MenuBarTranslator.app */;
@@ -430,7 +427,6 @@
 			);
 			mainGroup = D9C218B5256FA8A600B7E151;
 			packageReferences = (
-				D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = D9C218BF256FA8A600B7E151 /* Products */;
 			projectDirPath = "";
@@ -771,25 +767,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D96CFB5F26074C1B00DF1A77 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D96CFB5E26074C1B00DF1A77 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D9C218C5256FA8A700B7E151 /* MenuBarTranslator.xcdatamodeld */ = {
