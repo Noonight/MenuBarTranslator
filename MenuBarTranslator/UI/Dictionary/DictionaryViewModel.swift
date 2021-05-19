@@ -11,6 +11,7 @@ import Combine
 protocol DictionaryViewModelProtocol {
     var savedWords: [SavedWord] { get }
     var sortOption: SortOption { get set }
+//    var searchField: String { get set }
     func fetchWords()
     func deleteWord(_ word: SavedWord)
     func onAppear()
@@ -21,11 +22,44 @@ protocol DictionaryViewModelProtocol {
 final class DictionaryViewModel: ObservableObject {
     @Published var savedWords: [SavedWord] = [SavedWord]()
     @Published var sortOption: SortOption = .relevance
+    @Published var searchField: String = ""
+    private var searchOption: String?
     
-    var coreDataService: CoreDataServiceProtocol
+    private var coreDataService: CoreDataServiceProtocol
+
+    private var cancellableSet: Set<AnyCancellable> = []
     
     init(coreDataService: CoreDataServiceProtocol = CoreDataService.shared) {
         self.coreDataService = coreDataService
+        
+        /*
+         Bad behaviour: Twice loaded words
+            load on appear and on subscribing to $sortOption
+         Solution: Use Defeered
+            idk how ...
+         */
+        $sortOption
+            .receive(on: DispatchQueue.main)
+            .sink { value in
+                self.fetchWords()
+            }
+            .store(in: &cancellableSet)
+        
+        $searchField
+            .receive(on: DispatchQueue.main)
+            .removeDuplicates()
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink { value in
+                if value.isEmpty {
+                    self.searchOption = nil
+                }
+                if value.count > 0 {
+                    self.searchOption = value
+                }
+                self.fetchWords()
+            }
+            .store(in: &cancellableSet)
+        
     }
 }
 
@@ -45,7 +79,7 @@ extension DictionaryViewModel: DictionaryViewModelProtocol {
     }
     
     func fetchWords() {
-        savedWords = coreDataService.fetchWordList(sortBy: sortOption)
+        savedWords = coreDataService.fetchWordList(sortBy: sortOption, searchBy: searchOption)
     }
     
     func deleteWord(_ word: SavedWord) {

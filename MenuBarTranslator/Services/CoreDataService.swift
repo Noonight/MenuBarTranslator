@@ -9,7 +9,7 @@ import Foundation
 
 protocol CoreDataServiceProtocol {
     func findByUUID(uuid: UUID) -> SavedWord?
-    func fetchWordList(sortBy: SortOption?) -> [SavedWord]
+    func fetchWordList(sortBy: SortOption?, searchBy: String?) -> [SavedWord]
     func addWord(en: String, ru: String)
     func deleteWord(savedWord: SavedWord)
     func increaseRepeat(for word: SavedWord)
@@ -18,8 +18,8 @@ protocol CoreDataServiceProtocol {
 }
 
 extension CoreDataServiceProtocol {
-    func fetchWordList(sortBy: [SortOption]? = nil) -> [SavedWord] {
-        fetchWordList(sortBy: sortBy)
+    func fetchWordList(sortBy: SortOption? = nil, searchBy: String? = nil) -> [SavedWord] {
+        fetchWordList(sortBy: sortBy, searchBy: searchBy)
     }
 }
 
@@ -65,12 +65,20 @@ extension CoreDataService: CoreDataServiceProtocol {
         }
     }
     
-    func fetchWordList(sortBy: SortOption?) -> [SavedWord] {
+    func fetchWordList(sortBy: SortOption?, searchBy: String?) -> [SavedWord] {
         var result: Result<[SavedWord], Error>
         if let sort = sortBy?.sortDescription() {
-            result = coreDataHelper.fetch(SavedWord.self, sort: sort)
+            if let searchBy = searchBy {
+                result = coreDataHelper.fetch(SavedWord.self, predicate: NSPredicate(format: "en CONTAINS[cd] %@ OR ru CONTAINS[cd] %@", searchBy, searchBy), sort: sort)
+            } else {
+                result = coreDataHelper.fetch(SavedWord.self, sort: sort)
+            }
         } else {
-            result = coreDataHelper.fetch(SavedWord.self)
+            if let searchBy = searchBy {
+                result = coreDataHelper.fetch(SavedWord.self, predicate: NSPredicate(format: "en CONTAINS[cd] %@ OR ru CONTAINS[cd] %@", searchBy, searchBy))
+            } else {
+                result = coreDataHelper.fetch(SavedWord.self)
+            }
         }
         switch result {
         case .success(let savedWords):

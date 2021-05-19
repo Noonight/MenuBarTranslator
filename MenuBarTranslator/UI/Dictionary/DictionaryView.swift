@@ -15,12 +15,10 @@ struct DictionaryView: View {
         ZStack {
             emptyState
             VStack {
-                header
+//                header
                 
-                HStack {
-                    Spacer()
-                    filter
-                }
+                search
+                filter
                 
                 list
             }
@@ -43,6 +41,11 @@ struct DictionaryView: View {
         .frame(height: 25)
     }
     
+    var search: some View {
+        TextField("Search: ", text: $viewModel.searchField)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
+    
     var filter: some View {
         Picker(selection: $viewModel.sortOption,
                label: Image(systemName: "line.horizontal.3.decrease.circle.fill")
@@ -51,9 +54,9 @@ struct DictionaryView: View {
             ForEach(SortOption.allCases, id: \.self) { view in
                 Text(view.rawValue).tag(view)
             }
-        }.onChange(of: viewModel.sortOption) { _ in
-            viewModel.fetchWords()
-        }
+        }//.onChange(of: viewModel.sortOption) { _ in
+           // viewModel.fetchWords()
+        //}
     }
     
     var list: some View {
