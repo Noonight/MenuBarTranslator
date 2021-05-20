@@ -39,6 +39,7 @@
 		D9C218CC256FA8AB00B7E151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CB256FA8AB00B7E151 /* Preview Assets.xcassets */; };
 		D9C218CF256FA8AB00B7E151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CD256FA8AB00B7E151 /* Main.storyboard */; };
 		D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */; };
+		D9C6ECC22656AD9D0086B8E1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */; };
 		D9EE6786263CC99A004A4102 /* CoreDataHelper2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE6785263CC99A004A4102 /* CoreDataHelper2.swift */; };
 		D9EE678B263D11D2004A4102 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE678A263D11D2004A4102 /* CoreDataError.swift */; };
 		D9EE6793263D130F004A4102 /* CoreDataHelper2Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE6792263D130F004A4102 /* CoreDataHelper2Protocol.swift */; };
@@ -94,6 +95,7 @@
 		D9C218D0256FA8AB00B7E151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C218D1256FA8AB00B7E151 /* MenuBarTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarTranslator.entitlements; sourceTree = "<group>"; };
 		D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateApi.swift; sourceTree = "<group>"; };
+		D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D9EE6785263CC99A004A4102 /* CoreDataHelper2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper2.swift; sourceTree = "<group>"; };
 		D9EE678A263D11D2004A4102 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		D9EE6792263D130F004A4102 /* CoreDataHelper2Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper2Protocol.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				D98357A526397BDC00B68A33 /* SavedWord */,
 				D9422436257283A000DC9383 /* Translation */,
 				D94224312572828F00DC9383 /* Dictionary */,
+				D9C6ECC02656AD8E0086B8E1 /* Settings */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -324,6 +327,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D9C6ECC02656AD8E0086B8E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		D9EE6789263D11C7004A4102 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +504,7 @@
 				D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */,
 				D93BC23A260999AD00169C7F /* TextView.swift in Sources */,
 				D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */,
+				D9C6ECC22656AD9D0086B8E1 /* SettingsView.swift in Sources */,
 				D983578B2636F1F000B68A33 /* SavedWord+CoreDataClass.swift in Sources */,
 				D93ABB2E25809DAE0062519B /* LoadingTextField.swift in Sources */,
 				D951BAED263D94CD00F30A37 /* CoreDataService2.swift in Sources */,
