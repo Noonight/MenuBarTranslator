@@ -10,6 +10,7 @@ import Combine
 
 protocol TranslationViewModelProtocol {
     func saveWord()
+    func clearTranslationFields()
 }
 
 final class TranslationViewModel: ObservableObject {
@@ -74,6 +75,10 @@ final class TranslationViewModel: ObservableObject {
 }
 
 extension TranslationViewModel: TranslationViewModelProtocol {
+    func clearTranslationFields() {
+        self.fromText.removeAll()
+    }
+    
     func saveWord() {
         self.loading = true
         switch fromLanguage {

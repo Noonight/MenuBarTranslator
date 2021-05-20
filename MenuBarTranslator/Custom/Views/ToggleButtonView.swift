@@ -16,7 +16,8 @@ struct ToggleButtonView: View {
     var body: some View {
         if toggle {
             RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(.blue)
+//                .foregroundColor(.blue)
+                .foregroundColor(Color("ActiveButton"))
                 .overlay(Text(title).foregroundColor(.white))
                 .onTapGesture {
                     if toggle {
@@ -33,8 +34,9 @@ struct ToggleButtonView: View {
         } else {
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(nil)
-                    .shadow(color: .gray, radius: 5, x: 0.0, y: 0.0)
+//                    .foregroundColor(nil)
+                    .foregroundColor(Color("DisableButton"))
+                    .shadow(color: Color("DisableButton"), radius: 5, x: 0.0, y: 0.0)
                 Text(title).foregroundColor(.black)
             }
             .onTapGesture {

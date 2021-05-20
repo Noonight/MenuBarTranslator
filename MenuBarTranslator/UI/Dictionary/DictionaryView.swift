@@ -30,17 +30,6 @@ struct DictionaryView: View {
         
     }
     
-    var header: some View {
-        HStack(spacing: 4) {
-            Text("en")
-                .dictionaryHeaderStyle()
-            Text("ru")
-                .dictionaryHeaderStyle()
-        }
-        .frame(type: .wide)
-        .frame(height: 25)
-    }
-    
     var search: some View {
         TextField("Search: ", text: $viewModel.searchField)
             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -49,14 +38,12 @@ struct DictionaryView: View {
     var filter: some View {
         Picker(selection: $viewModel.sortOption,
                label: Image(systemName: "line.horizontal.3.decrease.circle.fill")
-                .foregroundColor(.white)
+                .foregroundColor(.blue)
         ) {
             ForEach(SortOption.allCases, id: \.self) { view in
                 Text(view.rawValue).tag(view)
             }
-        }//.onChange(of: viewModel.sortOption) { _ in
-           // viewModel.fetchWords()
-        //}
+        }
     }
     
     var list: some View {

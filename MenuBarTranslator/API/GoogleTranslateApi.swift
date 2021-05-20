@@ -11,7 +11,8 @@ import Combine
 class GoogleTranslateApi {
     
     static let shared = GoogleTranslateApi()
-    private let baseURL = "http://noonight.savayer.space/translate"
+//    private let baseURL = "http://noonight.savayer.space/translate"
+    private let baseURL = "http://0.0.0.0:4567/translate"
     
     private func absoluteURL(text: String, from: Language, to: Language) -> URL? {
         guard let url = URL(string: baseURL) else { return nil }

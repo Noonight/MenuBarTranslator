@@ -31,12 +31,12 @@ struct DictionaryCellView: View {
             words
             
             Divider()
-                .background(Color.black)
+                .background(Color("TranslateIn"))
             
             manageBtns
         }
         .padding(4)
-        .background(Color.secondary)
+        .background(Color("TranslateBackground"))
         .cornerRadius(5)
     }
     
@@ -44,11 +44,11 @@ struct DictionaryCellView: View {
         HStack(alignment: .firstTextBaseline) {
             Text(savedWord.en)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
-                .foregroundColor(.black)
+                .foregroundColor(Color("TranslateText"))
             Spacer()
             Text(savedWord.ru)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
-                .foregroundColor(.black)
+                .foregroundColor(Color("TranslateText"))
         }
     }
     
@@ -68,7 +68,7 @@ struct DictionaryCellView: View {
                 showSheet.toggle()
             }) {
                 Image(systemName: "pencil.circle.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TranslateIn"))
             }
             .popover(isPresented: $showSheet) {
                 goToWordView()
@@ -79,7 +79,7 @@ struct DictionaryCellView: View {
                 cellDelegate.deleteBtn(word: savedWord)
             }) {
                 Image(systemName: "trash.circle.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TranslateIn"))
             }
         }
     }
@@ -90,16 +90,16 @@ struct DictionaryCellView: View {
                 cellDelegate.decreaseBtn(word: savedWord)
             }) {
                 Image(systemName: "chevron.down.circle.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TranslateIn"))
             }
             Text("\(String(savedWord.repeatCounter))")
-                .foregroundColor(.black)
+                .foregroundColor(Color("TranslateText"))
                 .frame(minWidth: 6, maxWidth: 22)
             Button(action: {
                 cellDelegate.increaseBtn(word: savedWord)
             }) {
                 Image(systemName: "chevron.up.circle.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TranslateIn"))
             }
         }
     }
@@ -107,7 +107,7 @@ struct DictionaryCellView: View {
     @ViewBuilder var date: some View {
         if let lastDate = savedWord.lastRepeatDate {
             Text("\(DateHelper.format(date: lastDate))")
-                .foregroundColor(.black)
+                .foregroundColor(Color("TranslateText"))
         }
     }
     

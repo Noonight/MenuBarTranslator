@@ -16,7 +16,7 @@ struct TranslationView: View {
                 HStack {
                     Text("From")
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("TitleText"))
                     Spacer()
                     Group {
                         loadingView
@@ -55,15 +55,15 @@ struct TranslationView: View {
     
     @ViewBuilder var translationView: some View {
         HStack {
-            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: .black)
+            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: Color("TranslateText"))
                 .padding([.top, .bottom], 6)
-                .background(Color.secondary)
+                .background(Color("TranslateBackground"))
                 .cornerRadius(5)
                 .onAppear {
-                    self.viewModel.fromText.removeAll()
+                    self.viewModel.clearTranslationFields()
                 }
 
-            TextView(text: self.$viewModel.translation.text, textColor: nil)
+            TextView(text: self.$viewModel.translation.text, textColor: Color("TranslateText"))
                 .padding([.top, .bottom], 6)
             
 //            TextEditor(text: self.$viewModel.fromText)

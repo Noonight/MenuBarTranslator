@@ -39,7 +39,7 @@ struct WordView: View {
                 VStack {
                     words
                     Spacer()
-                    Divider().background(Color.white)
+                    Divider().background(Color("TranslateIn"))
                     manageButtons
                 }
                 .frame(width: 300, height: 100)
@@ -55,11 +55,11 @@ struct WordView: View {
             Text(viewModel.word?.en ?? "en")
                 .frame(type: .wide)
                 .frame(alignment: .topLeading)
-                .foregroundColor(.white)
+                .foregroundColor(Color("TranslateText"))
             Text(viewModel.word?.ru ?? "ру")
                 .frame(type: .wide)
                 .frame(alignment: .topLeading)
-                .foregroundColor(.white)
+                .foregroundColor(Color("TranslateText"))
             
         }
     }
@@ -76,11 +76,10 @@ struct WordView: View {
             Spacer()
             
             Button(action: {
-                //                    viewModel.updateWord()
                 close()
             }) {
                 Image(systemName: "checkmark.circle.fill")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("TranslateIn"))
             }
             
             Button(action: {
@@ -88,7 +87,7 @@ struct WordView: View {
                 close()
             }) {
                 Image(systemName: "trash.circle.fill")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("TranslateIn"))
             }
         }
     }
@@ -99,24 +98,24 @@ struct WordView: View {
                 viewModel.decreaseRepeatCounter()
             }) {
                 Image(systemName: "chevron.down.circle.fill")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("TranslateIn"))
             }
             Text("\(String(viewModel.word?.repeatCounter ?? 0))")
-                .foregroundColor(.white)
+                .foregroundColor(Color("TranslateText"))
                 .frame(minWidth: 6, maxWidth: 22)
             
             Button(action: {
                 viewModel.increaseRepeatCounter()
             }) {
                 Image(systemName: "chevron.up.circle.fill")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("TranslateIn"))
             }
         }
     }
     
     @ViewBuilder var date: some View {
         Text("\(DateHelper.format(date: viewModel.word?.lastRepeatDate ?? Date()))")
-            .foregroundColor(.white)
+            .foregroundColor(Color("TranslateText"))
         
     }
 }
