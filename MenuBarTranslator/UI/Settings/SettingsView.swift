@@ -9,32 +9,42 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State var apiAddress: String = ""
-    @State var lightBackground: Bool = false
+    @StateObject var viewModel = SettingsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("API Address :")
-                TextField("", text: $apiAddress)
+            VStack {
+                Text("API Address")
+                TextField("", text: $viewModel.apiAddress)
+            }
+            Form {
+                DisclosureGroup("Default addresses") {
+                    Picker("", selection: $viewModel.apiPicker.animation()) {
+                        ForEach(DefaultApiAddresses.allCases, id: \.self) { (value: DefaultApiAddresses) in
+                            Text(value.rawValue).tag(value)
+                        }
+                    }
+                }
             }
             
-            Toggle("LightBackgorund", isOn: $lightBackground)
-            
+            Spacer()
+
             Divider()
             
             HStack {
                 Spacer()
                 Button("Cancel") {
-                    
+                    viewModel.cancelChanges()
                 }
                 Button("Save") {
-                    
+                    viewModel.saveChanges()
                 }
             }
         }
         .padding()
-        .background(lightBackground ? Color.secondary : nil)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 

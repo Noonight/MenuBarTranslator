@@ -33,7 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         self.popover.contentViewController?.view.window?.becomeKey()
         
         let setPopover = NSPopover()
-        setPopover.contentSize = NSSize(width: 300, height: 250)
+        setPopover.contentSize = NSSize(width: 300, height: 150)
+        setPopover.behavior = .transient
         setPopover.appearance = NSAppearance(named: NSAppearance.Name.darkAqua)
         setPopover.contentViewController = NSHostingController(rootView: settingsView)
         self.settingsPopover = setPopover

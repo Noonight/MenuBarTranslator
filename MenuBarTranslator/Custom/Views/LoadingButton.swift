@@ -27,6 +27,7 @@ struct LoadingButton: View {
             Button(text) {
                 tapAction()
             }
+            .foregroundColor(Color("TranslateText"))
         }
     }
 }

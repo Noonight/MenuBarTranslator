@@ -40,6 +40,9 @@
 		D9C218CF256FA8AB00B7E151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C218CD256FA8AB00B7E151 /* Main.storyboard */; };
 		D9C606B5257A60810064AB59 /* GoogleTranslateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */; };
 		D9C6ECC22656AD9D0086B8E1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */; };
+		D9C6ECC8265776910086B8E1 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6ECC7265776910086B8E1 /* UserDefaultsHelper.swift */; };
+		D9C6ECCC26577D9C0086B8E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6ECCB26577D9C0086B8E1 /* SettingsViewModel.swift */; };
+		D9C6ECD026578E1E0086B8E1 /* DefaultApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C6ECCF26578E1E0086B8E1 /* DefaultApiAddresses.swift */; };
 		D9EE6786263CC99A004A4102 /* CoreDataHelper2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE6785263CC99A004A4102 /* CoreDataHelper2.swift */; };
 		D9EE678B263D11D2004A4102 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE678A263D11D2004A4102 /* CoreDataError.swift */; };
 		D9EE6793263D130F004A4102 /* CoreDataHelper2Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE6792263D130F004A4102 /* CoreDataHelper2Protocol.swift */; };
@@ -96,6 +99,9 @@
 		D9C218D1256FA8AB00B7E151 /* MenuBarTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuBarTranslator.entitlements; sourceTree = "<group>"; };
 		D9C606B4257A60810064AB59 /* GoogleTranslateApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateApi.swift; sourceTree = "<group>"; };
 		D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D9C6ECC7265776910086B8E1 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		D9C6ECCB26577D9C0086B8E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D9C6ECCF26578E1E0086B8E1 /* DefaultApiAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultApiAddresses.swift; sourceTree = "<group>"; };
 		D9EE6785263CC99A004A4102 /* CoreDataHelper2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper2.swift; sourceTree = "<group>"; };
 		D9EE678A263D11D2004A4102 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		D9EE6792263D130F004A4102 /* CoreDataHelper2Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper2Protocol.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 			children = (
 				D942243C2572862000DC9383 /* LanguageModel.swift */,
 				D951BAF5264058A100F30A37 /* SortOption.swift */,
+				D9C6ECCF26578E1E0086B8E1 /* DefaultApiAddresses.swift */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				D9EE6791263D12FB004A4102 /* CoreData2 */,
 				D9EE6790263D12EF004A4102 /* CoreData1 */,
 				D983578F26387C8D00B68A33 /* DateHelper.swift */,
+				D9C6ECC7265776910086B8E1 /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C6ECC12656AD9D0086B8E1 /* SettingsView.swift */,
+				D9C6ECCB26577D9C0086B8E1 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -488,6 +497,7 @@
 				D94224332572829F00DC9383 /* DictionaryView.swift in Sources */,
 				D983577C263531D300B68A33 /* DBHelperProtocol.swift in Sources */,
 				D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */,
+				D9C6ECD026578E1E0086B8E1 /* DefaultApiAddresses.swift in Sources */,
 				D942242F2572749400DC9383 /* EnRuToggleButtonsView.swift in Sources */,
 				D927689D2617462D00B9A74D /* LoadingButton.swift in Sources */,
 				D98357AD26397C6200B68A33 /* WordViewModel.swift in Sources */,
@@ -495,6 +505,7 @@
 				D94224412572866300DC9383 /* MainView.swift in Sources */,
 				D9EE6786263CC99A004A4102 /* CoreDataHelper2.swift in Sources */,
 				D983579326394C4E00B68A33 /* Array+SavedWord.swift in Sources */,
+				D9C6ECC8265776910086B8E1 /* UserDefaultsHelper.swift in Sources */,
 				D951BAF6264058A100F30A37 /* SortOption.swift in Sources */,
 				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
 				D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */,
@@ -502,6 +513,7 @@
 				D983578C2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift in Sources */,
 				D942243D2572862000DC9383 /* LanguageModel.swift in Sources */,
 				D9EEC6FC256FC279001EAFFE /* ToggleButtonView.swift in Sources */,
+				D9C6ECCC26577D9C0086B8E1 /* SettingsViewModel.swift in Sources */,
 				D93BC23A260999AD00169C7F /* TextView.swift in Sources */,
 				D9EEC6F8256FC078001EAFFE /* BlueButtonStyle.swift in Sources */,
 				D9C6ECC22656AD9D0086B8E1 /* SettingsView.swift in Sources */,
