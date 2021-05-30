@@ -17,9 +17,3 @@ public protocol DBHelperProtocol {
     func update(_ object: ObjectType)
     func delete(_ object: ObjectType)
 }
-
-public extension DBHelperProtocol {
-    func fetch(_ objectType: ObjectType.Type, predicate: PredicateType? = nil, sort: [NSSortDescriptor]? = nil, limit: Int? = nil) -> Result<[ObjectType], Error> {
-        return fetch(objectType, predicate: predicate, sort: sort, limit: limit)
-    }
-}

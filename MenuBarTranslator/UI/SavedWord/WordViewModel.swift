@@ -30,41 +30,8 @@ final class WordViewModel: ObservableObject {
 
 extension WordViewModel: WordViewModelProtocol {
     internal func updateViewData() {
-//        let words = coreDataService.fetchWordList()
-//        word = words.filter { (sw: SavedWord) in
-//            sw.id! == self.word?.id!
-//        }.first
-//        if let unwrappedWord = self.word, let id = unwrappedWord.id {
-//            self.word = self.coreDataService.findByUUID(uuid: id)
-//        } else {
-//            print("Word is nil")
-//        }
-        
-        let helper = CoreDataHelper.shared.context
-        let fetchRequest: NSFetchRequest<SavedWord> = SavedWord.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id = %@", word!.id!.uuidString)
-        fetchRequest.fetchLimit = 1
-        do {
-            let result = try helper.fetch(fetchRequest)
-            let updatedWord = result.first
-            self.word = updatedWord
-        } catch {
-            print("error")
-        }
-        // some error
-//        let fetchedWord = CoreDataHelper.shared.fetchFirst(SavedWord.self, predicate: NSPredicate(format: "id = %@", word!.id!.uuidString))
-//        switch fetchedWord {
-//        case .success(let savedWord):
-//            word = savedWord
-//        case .failure(let error):
-//            print("failure")
-//        }
-//        word = fetchedWord
-        
-//        coreDataService2.findByUUID(uuid: word!.id!) { (savedWord) in
-//            self.word = savedWord
-//            print(self.word)
-//        }
+        guard let uuid = word?.id else { return }
+        word = coreDataService.findByUUID(uuid: uuid)
     }
     
     func increaseRepeatCounter() {

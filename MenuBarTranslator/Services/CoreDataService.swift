@@ -55,7 +55,7 @@ extension CoreDataService: CoreDataServiceProtocol {
     }
     
     func findByUUID(uuid: UUID) -> SavedWord? {
-        let result = coreDataHelper.fetchFirst(SavedWord.self, predicate: NSPredicate(format: "id = %@", uuid.uuidString))
+        let result = coreDataHelper.fetchFirst(SavedWord.self, predicate: NSPredicate(format: "id == %@", uuid as CVarArg))
         switch result {
         case .success(let savedWord):
             return savedWord
