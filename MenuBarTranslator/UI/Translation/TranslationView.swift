@@ -55,34 +55,15 @@ struct TranslationView: View {
     
     @ViewBuilder var translationView: some View {
         HStack {
-            TextView(text: self.$viewModel.fromText, isFirstResponder: true, textColor: Color("TranslateText"))
-                .padding([.top, .bottom], 6)
-                .background(Color("TranslateBackground"))
+            TextEditor(text: self.$viewModel.fromText)
+                .font(.system(size: 17, weight: .light, design: Font.Design.rounded))
                 .cornerRadius(5)
-                .onAppear {
-                    self.viewModel.clearTranslationFields()
-                }
-
-            TextView(text: self.$viewModel.translation.text, textColor: Color("TranslateText"))
-                .padding([.top, .bottom], 6)
+                .frame(type: .wide)
             
-//            TextEditor(text: self.$viewModel.fromText)
-//                .padding([.top, .bottom], 6)
-//                .background(Color.secondary)
-//                .cornerRadius(5)
-//                .foregroundColor(.black)
-//                .frame(type: .wide)
-//            VStack(alignment: .leading, spacing: 0) {
-//                Text(viewModel.translation.text)
-//                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-//                    .background(Color.red)
-//                    .multilineTextAlignment(.leading)
-//                    .padding([.top, .bottom], 6)
-//
-//                Spacer()
-//            }
-//            .frame(type: .wide)
-            
+            TextEditor(text: self.$viewModel.translation.text)
+                .font(.system(size: 17, weight: .thin, design: Font.Design.rounded))
+                .cornerRadius(5)
+                .frame(type: .wide)
         }
     }
 }
