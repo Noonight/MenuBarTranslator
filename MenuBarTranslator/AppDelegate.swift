@@ -16,19 +16,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     var statusBarMenu: NSMenu!
     var settingsPopover: NSPopover!
     
+    var popoverTracker: MainPopoverTracker!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let context = CoreDataHelper.shared.context
-        
-        let contentView = MainView().environment(\.managedObjectContext, context)
         
         let settingsView = SettingsView()
         
         let popover = NSPopover()
         popover.contentSize = NSSize(width: 300, height: 250)
         
+        popoverTracker = MainPopoverTracker(popover: popover)
+        
         popover.behavior = .transient
         popover.appearance = NSAppearance(named: NSAppearance.Name.darkAqua)
+        
+        let contentView = MainView()
+            .environment(\.managedObjectContext, context)
+            .environmentObject(TranslationViewModel(popoverTracker: popoverTracker))
         popover.contentViewController = NSHostingController(rootView: contentView)
+        
         self.popover = popover
         self.popover.contentViewController?.view.window?.becomeKey()
         

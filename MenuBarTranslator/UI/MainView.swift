@@ -9,15 +9,17 @@ import SwiftUI
 
 struct MainView: View {
     
+    @EnvironmentObject var translationViewModel: TranslationViewModel
+    
     var body: some View {
         TabView {
             TranslationView()
                 .tabItem { Text("Translation") }
+                .environmentObject(translationViewModel)
             
             DictionaryView()
                 .tabItem { Text("Dictionary") }
         }
-//        .accentColor(.accentColor)
         .padding(.top, 6)
     }
 }

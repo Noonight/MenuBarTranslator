@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TranslationView: View {
-    @StateObject var viewModel = TranslationViewModel()
+    @EnvironmentObject var viewModel: TranslationViewModel
     
     var body: some View {
         VStack(spacing: 6) {

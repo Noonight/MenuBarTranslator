@@ -26,9 +26,18 @@ final class TranslationViewModel: ObservableObject {
     
     var coreDataService: CoreDataServiceProtocol
     
-    init(coreDataService: CoreDataServiceProtocol = CoreDataService.shared) {
+    var popoverTracker: PopoverTrackerProtocol
+    
+    init(coreDataService: CoreDataServiceProtocol = CoreDataService.shared,
+         popoverTracker: PopoverTrackerProtocol) {
         self.coreDataService = coreDataService
+        self.popoverTracker = popoverTracker
         
+        setupBindings()
+        setupPopoverTracker()
+    }
+    
+    func setupBindings() {
         $fromLanguage
             .sink { (language: Language) in
                 self.fromText.removeAll()
@@ -72,6 +81,11 @@ final class TranslationViewModel: ObservableObject {
             })
             .store(in: &self.cancellableSet)
     }
+    
+    func setupPopoverTracker() {
+        popoverTracker.delegate = self
+        popoverTracker.registerObservers()
+    }
 }
 
 extension TranslationViewModel: TranslationViewModelProtocol {
@@ -90,5 +104,12 @@ extension TranslationViewModel: TranslationViewModelProtocol {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             self.loading = false
         }
+    }
+}
+
+// MARK: - PopoverTrackerDelegate
+extension TranslationViewModel: PopoverTrackerDelegate {
+    func onWillShow() {
+        clearTranslationFields()
     }
 }

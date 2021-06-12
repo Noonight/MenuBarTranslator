@@ -23,6 +23,7 @@
 		D951BAF6264058A100F30A37 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D951BAF5264058A100F30A37 /* SortOption.swift */; };
 		D95FAA5B261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */; };
 		D9685552257A6B400011D392 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9685551257A6B400011D392 /* TranslateModel.swift */; };
+		D981BB1E26751E680030387A /* MainPopoverTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981BB1D26751E680030387A /* MainPopoverTracker.swift */; };
 		D983577526352FA700B68A33 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577426352FA700B68A33 /* CoreDataService.swift */; };
 		D98357792635319400B68A33 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98357782635319400B68A33 /* CoreDataHelper.swift */; };
 		D983577C263531D300B68A33 /* DBHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983577B263531D300B68A33 /* DBHelperProtocol.swift */; };
@@ -75,6 +76,7 @@
 		D951BAF5264058A100F30A37 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		D95FAA5A261CC13B00AD5F91 /* TextDictionaryTitleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDictionaryTitleStyle.swift; sourceTree = "<group>"; };
 		D9685551257A6B400011D392 /* TranslateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateModel.swift; sourceTree = "<group>"; };
+		D981BB1D26751E680030387A /* MainPopoverTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPopoverTracker.swift; sourceTree = "<group>"; };
 		D983577426352FA700B68A33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		D98357782635319400B68A33 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		D983577B263531D300B68A33 /* DBHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelperProtocol.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		D90CF5F1256FB0840055DB28 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D9232A5726752C4F002FC4CA /* StatusBar */,
 				D94224402572866300DC9383 /* MainView.swift */,
 				D98357A526397BDC00B68A33 /* SavedWord */,
 				D9422436257283A000DC9383 /* Translation */,
@@ -143,6 +146,14 @@
 				D9C218C8256FA8AB00B7E151 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9232A5726752C4F002FC4CA /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				D981BB1D26751E680030387A /* MainPopoverTracker.swift */,
+			);
+			path = StatusBar;
 			sourceTree = "<group>";
 		};
 		D9276897261625BE00B9A74D /* Extensions */ = {
@@ -238,6 +249,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D981BB16267505380030387A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D983577326352F8100B68A33 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +323,7 @@
 		D9C218C0256FA8A700B7E151 /* MenuBarTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				D981BB16267505380030387A /* Base */,
 				D9EE6789263D11C7004A4102 /* Errors */,
 				D98357772635318A00B68A33 /* Helpers */,
 				D983577326352F8100B68A33 /* Services */,
@@ -504,6 +523,7 @@
 				D9C6ECC8265776910086B8E1 /* UserDefaultsHelper.swift in Sources */,
 				D951BAF6264058A100F30A37 /* SortOption.swift in Sources */,
 				D9685552257A6B400011D392 /* TranslateModel.swift in Sources */,
+				D981BB1E26751E680030387A /* MainPopoverTracker.swift in Sources */,
 				D93BDC832610B6880084E4C7 /* DictionaryViewModel.swift in Sources */,
 				D983577526352FA700B68A33 /* CoreDataService.swift in Sources */,
 				D983578C2636F1F000B68A33 /* SavedWord+CoreDataProperties.swift in Sources */,
