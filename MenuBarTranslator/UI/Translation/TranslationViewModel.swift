@@ -11,6 +11,7 @@ import Combine
 protocol TranslationViewModelProtocol {
     func saveWord()
     func clearTranslationFields()
+    func generateURL() -> URL
 }
 
 final class TranslationViewModel: ObservableObject {
@@ -21,6 +22,7 @@ final class TranslationViewModel: ObservableObject {
     @Published var translation = TranslateModel.placeholder
     @Published var loading: Bool = false
     @Published var error: String = ""
+    @Published var webUrl: URL?
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -38,6 +40,8 @@ final class TranslationViewModel: ObservableObject {
     }
     
     func setupBindings() {
+        
+        
         $fromLanguage
             .sink { (language: Language) in
                 self.fromText.removeAll()
@@ -89,6 +93,19 @@ final class TranslationViewModel: ObservableObject {
 }
 
 extension TranslationViewModel: TranslationViewModelProtocol {
+    func generateURL() -> URL {
+        var baseURL = "https://translate.google.com"
+        baseURL.append("/?")
+        switch fromLanguage {
+        case .en:
+            baseURL.append("sl=en&tl=ru")
+        case .ru:
+            baseURL.append("sl=ru&tl=en")
+        }
+        baseURL.append("&text=\(fromText)")
+        return URL(string: baseURL)!
+    }
+    
     func clearTranslationFields() {
         self.fromText.removeAll()
     }

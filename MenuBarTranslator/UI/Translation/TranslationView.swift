@@ -28,6 +28,10 @@ struct TranslationView: View {
             }
             
             translationView
+            HStack {
+                Spacer()
+                translationLink
+            }
         }
         .padding([.leading, .bottom, .trailing], 6)
     }
@@ -65,6 +69,10 @@ struct TranslationView: View {
                 .cornerRadius(5)
                 .frame(type: .wide)
         }
+    }
+    
+    var translationLink: some View {
+        Link("browser", destination: viewModel.generateURL())
     }
 }
 
